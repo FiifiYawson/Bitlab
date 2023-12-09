@@ -1,0 +1,13 @@
+/* .formcontainer{
+    height: 500px;
+    width:500px;
+    background-color: aquamarine;
+} */
+
+.form{
+    /* background-color: aqua; */
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: grid;
+    place-items: center;
+}

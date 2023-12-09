@@ -1,0 +1,143 @@
+.ffirstpart{
+    height: 700px;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0%;
+    
+}
+
+.ffirstpart h1{
+    padding-top:30%;
+    padding-left: 20%;
+    padding-bottom: 0;
+    font-size: 3rem;
+    color: rgb(0, 13, 73);
+}
+
+.fcontent{
+    height: 100%;
+    width: 700px;
+    /* background-color: blue; */
+}
+
+.ffirstpart p{
+    /* width: 55%; */
+    font-size: 1.3rem;
+    padding-left: 20%;
+    letter-spacing: 1.5px;
+    height: 100%;
+    /* flex: initial; */
+}
+
+
+.image{
+    margin-top: 15%;
+     height: 300px;
+     width: 300px;
+     /* background-color: green; */
+     margin-right: 15%;
+     background-image: url('./round.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     border-radius: 50%;
+}
+
+.blimage{
+    height:750px;
+    width: 100%;
+    background-image: url("./intro1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.appealforsponsors{
+    text-align: center;
+}
+
+.appealforsponsors p{
+    padding: 10%;
+    font-size: 1.5rem;
+}
+
+.contact{
+    background: #d1d1d1;
+    text-align: center;
+}
+
+.contact p{
+    padding: 3%;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sponsors h1{
+    font-size: 3rem;
+    color:rgb(0, 13, 73);
+}
+
+.click{
+    height:50px;
+    background-color: yellow;
+    padding: 2%;
+}
+
+.click h2{
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+
+.currrentsponsors{
+    display: flex;
+    /* column-gap: 20px; */
+    justify-content: space-around;
+}
+
+.currrentsponsors img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.bb{
+    transform: scale(0.8);
+}
+
+
+
+@media (max-width:425px){
+    .ffirstpart{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image{
+        order: 1;
+    }
+
+    .fcontent{
+        order: 2;
+        width: 100%;
+    }
+
+    .fcontent h1{
+        padding: 0;
+    }
+
+    .fcontent p{
+        padding: 0;
+        padding-bottom: 5%;
+    }
+
+    .image{
+        margin-top: 30%;
+        height: 500px;
+        width: 300px;
+        margin-left: 13%;
+    }
+
+}
+
+
