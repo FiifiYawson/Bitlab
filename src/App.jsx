@@ -6,7 +6,7 @@ import About from "./About";
 import Apply from "./Apply";
 import Financial from "./financialaid";
 import Gallery from "./gallery";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
