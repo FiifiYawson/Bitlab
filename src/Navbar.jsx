@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const navitems = ["Home","About", "Courses", "Financial Aid", "Apply","Gallery"];
 
@@ -29,50 +30,53 @@ const Navbar = () => {
   // };
 
   const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1000px)");
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia("(max-width: 1000px)");
+  //   setIsMobile(mediaQuery.matches);
+  //   const handleMediaQueryChange = (event) => {
+  //     setIsMobile(event.matches);
+  //   };
+  //   mediaQuery.addEventListener("change", handleMediaQueryChange);
+  //   return () => {
+  //     mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  //   };
+  // }, []);
 
   const [showSidebar, setShowSidebar] = useState(false);
   const changeSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  const [itemHovered, setItemHovered] = useState(-1);
-  const [timeoutId, setTimeoutId] = useState(null);
+  // const [itemHovered, setItemHovered] = useState(-1);
+  // const [timeoutId, setTimeoutId] = useState(null);
 
-  // hover if mobile, else click if not mobile screen
-  const handleMouseEnter = (item) => {
-    clearTimeout(timeoutId);
-    if (!isMobile) {
-      setItemHovered(item);
-    }
-  };
+  // // hover if mobile, else click if not mobile screen
+  // const handleMouseEnter = (item) => {
+  //   clearTimeout(timeoutId);
+  //   if (!isMobile) {
+  //     setItemHovered(item);
+  //   }
+  // };
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      const id = setTimeout(() => {
-        setItemHovered(-1);
-      }, 500); // adjust the delay time as needed
-      setTimeoutId(id);
-    }
-  };
+  // const handleMouseLeave = () => {
+  //   if (!isMobile) {
+  //     const id = setTimeout(() => {
+  //       setItemHovered(-1);
+  //     }, 500); // adjust the delay time as needed
+  //     setTimeoutId(id);
+  //   }
+  // };
 
   const handleClick = (item) => {
-    if (item === itemHovered) {
-      setItemHovered(-1);
-    } else {
-      setItemHovered(item);
-    }
+    // if (item === itemHovered) {
+    //   setItemHovered(-1);
+    // } else {
+    //   setItemHovered(item);
+    // }
+
+    changeSidebar()
   };
+
 
   return (
     <nav className="navbar">
@@ -85,18 +89,19 @@ const Navbar = () => {
             <img src="/bitlab-logo.svg" />
           </li>
           {navitems.map((navitem, index) => (
-            <li
-              key={index}
-              className={`navbar-item ${itemHovered === index ? "active" : ""}`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <a href={navitem.split(" ")[0]}>{navitem}</a>
-              {/* <button onClick={() => handleClick(index)}>
-                <IoIosArrowForward size={30} className="arrow1" />
-              </button> */}
-              {/* {itemHovered === index && <Dropdown header={navitem} />} */}
-            </li>
+            <Link key={index} to={navitem.split(" ")[0]}onClick={() => handleClick(index)}>
+              <li
+                className={`navbar-item `}
+                // onMouseEnter={() => handleMouseEnter(index)}
+                // onMouseLeave={handleMouseLeave}
+              >
+                  {navitem}
+                  <button >
+                    <IoIosArrowForward size={30} className="arrow1" />
+                  </button>
+                {/* {itemHovered === index && <Dropdown header={navitem} />} */}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

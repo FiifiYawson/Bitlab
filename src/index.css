@@ -12,13 +12,30 @@
   color: #333;
 }
 
+.first-part{
+  padding: 100px 0;
+  position: relative;
+  background-image: url("/intro1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first-part::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  backdrop-filter: blur(1px);
+}
+
 .navbar {
   padding: 0px 20px;
   display: flex;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
   background-color: white;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: 10;
   justify-content: space-around;
@@ -262,10 +279,9 @@
 }
 
 .textonimage {
-  position: absolute;
-  top: 40%;
-   padding-left: 5%;
-   padding-right: 5%;
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .textonimage h2 {
@@ -341,7 +357,7 @@
 
 .boxes{
   height: 250px ;
-  width: 20%;
+  width: 250px;
   margin: 20px;
   background-color:rgb(0, 13, 73);
   box-sizing: border-box;
@@ -350,6 +366,7 @@
 }
 
 .boxes img{
+  object-fit: cover;
   width: 100%;
   height: 80%;
 }
@@ -411,8 +428,8 @@
 
 .grid2 {
   position: relative;
-   padding-left: 5%;
-   padding-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   column-gap: 20px;
   padding-top: 150px;
   display: flex;
@@ -420,14 +437,14 @@
 
 .video {
   height: 400px;
-  width:50% ;
+  flex: 1;
   background-image: url("/side.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .video-text {
-  width: 40%;
+  flex: 1;
   background-color: rgb(253, 253, 253);
   margin-right: 20px;
   padding-left: 5%;
@@ -539,7 +556,6 @@
 }
 
 .firsthalf {
-  height: 600px;
   background-color: rgb(255, 255, 255);
   width: 50%;
 }
@@ -563,7 +579,6 @@
 .firsthalf h2 {
   padding: 50px;
   padding-top: 3%;
-  text-align: justify;
   font-size: 1.6rem;
 }
 
@@ -619,6 +634,15 @@
 }
 
 @media (max-width:1024px){
+  .grid2{
+    flex-direction: column;
+    gap: 50px
+  }
+
+  .video{
+    flex: none
+  }
+
   .boxes h2{
     padding: 0;
     font-size: 1.1rem;
@@ -626,14 +650,17 @@
 }
 
 @media (max-width:768px){
-  .textonimage h2{
-    margin-top: -100px;;
-    font-size: 45px;
+
+  .seventh-part{
+    flex-direction: column-reverse;
   }
 
-  
-  .boxes{
-    width:40%
+  .secondhalf, .firsthalf{
+    width: auto;
+  }
+
+  .textonimage h2{
+    font-size: 45px;
   }
 
   .text{
@@ -664,12 +691,10 @@
     
    .textonimage h2{
       font-size: 35px;
-      margin-top: -20%;
     }
 
     .textonimage p{
       margin: 0;
-      margin-top: -5%;
       font-size: 18px;
     }
 

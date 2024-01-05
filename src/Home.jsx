@@ -5,7 +5,7 @@ const Homepage = () => {
   return (
     <div className="Home">
       <div className="first-part">
-        <img src="/intro1.jpg" alt="" />
+        {/* <img src="/intro1.jpg" alt="" /> */}
         <div className="textonimage">
           <h2>Empowering Young Minds Through STEM Innovation</h2>
           <p>

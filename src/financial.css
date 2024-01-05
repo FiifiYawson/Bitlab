@@ -1,31 +1,28 @@
 .ffirstpart{
-    height: 700px;
-    width: 100%;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
-    margin-top: 0%;
-    
+    align-items: center;
+    padding-top: 100px;
+    margin: 0 50px;
+    margin-bottom: 100px;
+    gap: 30px;
 }
 
 .ffirstpart h1{
-    padding-top:30%;
-    padding-left: 20%;
-    padding-bottom: 0;
     font-size: 3rem;
     color: rgb(0, 13, 73);
 }
 
 .fcontent{
     height: 100%;
-    width: 700px;
+    /* width: 700px; */
     /* background-color: blue; */
 }
 
 .ffirstpart p{
     /* width: 55%; */
     font-size: 1.3rem;
-    padding-left: 20%;
     letter-spacing: 1.5px;
     height: 100%;
     /* flex: initial; */
@@ -33,16 +30,14 @@
 
 
 .image{
-    margin-top: 15%;
-     height: 300px;
-     width: 300px;
-     /* background-color: green; */
-     margin-right: 15%;
-     background-image: url('./round.jpg');
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-     border-radius: 50%;
+    height: 300px;
+    min-width: 300px;
+    /* background-color: green; */
+    background-image: url('./round.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
 }
 
 .blimage{
@@ -51,6 +46,7 @@
     background-image: url("./intro1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .appealforsponsors{
@@ -93,6 +89,7 @@
 .currrentsponsors{
     display: flex;
     /* column-gap: 20px; */
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -105,21 +102,22 @@
     transform: scale(0.8);
 }
 
+@media (max-width: 800px){
+    .ffirstpart{
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
 
+    .ffirstpart p{
+        padding-inline: 30px;
+    }
+}
 
 @media (max-width:425px){
-    .ffirstpart{
-        flex-direction: column;
-        text-align: center;
-    }
-
     .image{
         order: 1;
-    }
-
-    .fcontent{
-        order: 2;
-        width: 100%;
     }
 
     .fcontent h1{

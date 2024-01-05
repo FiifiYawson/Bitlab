@@ -58,10 +58,11 @@
  }
 
  .column1 img{
-    /* max-width: 500px; */
+    max-width: 100%;
     margin-right: 20px;
     max-height: 300px;
     transition: transform 0.3s ease;
+    object-fit: cover;
      
  }
 
